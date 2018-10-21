@@ -13,9 +13,9 @@ namespace Calculator.ViewModels
     public class CalculatorViewModel : ViewModelBase
     {
         public CalculatorModel CalculatorVar;
-        public string TextBox1;
+        private string display;
 
-        public ObservableCollection<CalculatorModel> Phones { get; set; }
+        public ObservableCollection<CalculatorModel> Calculation { get; set; }
 
         private CalculatorCommand plusCommand;
 
@@ -28,11 +28,11 @@ namespace Calculator.ViewModels
                   { 
                       CalculatorModel objCalculator = new CalculatorModel();
                       objCalculator.Result = objCalculator.FirstOperand + objCalculator.Operation + objCalculator.SecondOperand;
-                      Phones[0].Result = "x2lel";
+                      Calculation[0].Result = "x2lel";
                   }));
             }
         }
-        //command for write value button in operand
+        //command to track button presses and call method for write operand
         private CalculatorCommand digitBtnPressCommand;
 
         public CalculatorCommand DigitBtnPressCommand
@@ -42,18 +42,37 @@ namespace Calculator.ViewModels
                 return digitBtnPressCommand ??
                     (digitBtnPressCommand = new CalculatorCommand(obj =>
                     {
-                        string number = obj as string;
-                        Phones[0].Result = number;
+                        
+                        string valueButton = obj as string;
+                        DigitButtonPress(valueButton);
+                        
                     }));
             }
         }
+        //
+        public void DigitButtonPress(string valueButton)
+        {
+            if (Display != null) { Display += valueButton; }
+            else { Display = valueButton; }
+            
+           // Calculation[0].Result = valueButton;
+        }
 
+        public string Display
+        {
+            get { return display; }
+            set
+            {
+                display = value;
+                OnPropertyChanged("Display");
+            }
+        }
         public CalculatorViewModel()
         {
             CalculatorVar = new CalculatorModel();
             CalculatorVar.FirstOperand = "Hello";
 
-            Phones = new ObservableCollection<CalculatorModel>
+            Calculation = new ObservableCollection<CalculatorModel>
             {
                 new CalculatorModel { FirstOperand="2",SecondOperand="+",Operation="1",Result="lel" }
             };
