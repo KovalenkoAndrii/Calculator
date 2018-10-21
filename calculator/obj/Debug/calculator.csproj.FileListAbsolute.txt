@@ -1,0 +1,17 @@
+C:\Users\Den\source\repos\test\calculator\calculator\bin\Debug\calculator.exe.config
+C:\Users\Den\source\repos\test\calculator\calculator\bin\Debug\calculator.exe
+C:\Users\Den\source\repos\test\calculator\calculator\bin\Debug\calculator.pdb
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\calculator.csprojAssemblyReference.cache
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\MainWindow.g.cs
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\App.g.cs
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\calculator_MarkupCompile.cache
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\calculator_MarkupCompile.lref
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\MainWindow.baml
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\calculator.g.resources
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\calculator.Properties.Resources.resources
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\calculator.csproj.GenerateResource.cache
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\calculator.csproj.CoreCompileInputs.cache
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\calculator.exe
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\calculator.pdb
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\Views\CalculatorView.g.cs
+C:\Users\Den\source\repos\test\calculator\calculator\obj\Debug\Views\CalculatorView.baml
