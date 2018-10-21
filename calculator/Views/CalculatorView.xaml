@@ -15,33 +15,39 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="0.8*" />
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="0.2*" />
-        </Grid.RowDefinitions>
-
-        <ListBox ItemsSource="{Binding Calculation}">
-             
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                    <TextBox Height="60" Width="60" Text="{Binding Path=Display}" ></TextBox>
-                        <TextBox Height="60" Width="60"  Name="tb1" Grid.Row="0" Grid.Column="0" Text="{Binding Result, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <Button Name="Button7" Command="{Binding PlusCommand}" Grid.Column="0" Grid.Row="2">7</Button>
         
-        <StackPanel >
-            <Button Name="Button8" Command="{Binding DigitBtnPressCommand}" CommandParameter="8" Grid.Column="2" Grid.Row="2">8</Button>
-            <TextBox Name="Display" Height="60" Width="60" Text="{Binding Path=Display }" ></TextBox>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        
+        <TextBox IsReadOnly="True" TextAlignment="Right" Name="Display" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding Path=Display }" ></TextBox>
 
+        <Button Name="Button7" Grid.Row="3" Grid.Column="0" Command="{Binding DigitBtnPressCommand}" CommandParameter="7">7</Button>
+        <Button Name="Button8" Grid.Row="3" Grid.Column="1" Command="{Binding DigitBtnPressCommand}" CommandParameter="8">8</Button>
+        <Button Name="Button9" Grid.Row="3" Grid.Column="2" Command="{Binding DigitBtnPressCommand}" CommandParameter="9">9</Button>
 
+        <Button Name="Button4" Grid.Row="4" Grid.Column="0" Command="{Binding DigitBtnPressCommand}" CommandParameter="4">4</Button>
+        <Button Name="Button5" Grid.Row="4" Grid.Column="1" Command="{Binding DigitBtnPressCommand}" CommandParameter="5">5</Button>
+        <Button Name="Button6" Grid.Row="4" Grid.Column="2" Command="{Binding DigitBtnPressCommand}" CommandParameter="6">6</Button>
+
+        <Button Name="Button1" Grid.Row="5" Grid.Column="0" Command="{Binding DigitBtnPressCommand}" CommandParameter="1">1</Button>
+        <Button Name="Button2" Grid.Row="5" Grid.Column="1" Command="{Binding DigitBtnPressCommand}" CommandParameter="2">2</Button>
+        <Button Name="Button3" Grid.Row="5" Grid.Column="2" Command="{Binding DigitBtnPressCommand}" CommandParameter="3">3</Button>
+
+        <Button Name="Button0" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding DigitBtnPressCommand}" CommandParameter="0">0</Button>
     </Grid>
    
 
