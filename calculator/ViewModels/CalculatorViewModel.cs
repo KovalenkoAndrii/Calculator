@@ -32,6 +32,22 @@ namespace Calculator.ViewModels
                   }));
             }
         }
+        //command for write value button in operand
+        private CalculatorCommand digitBtnPressCommand;
+
+        public CalculatorCommand DigitBtnPressCommand
+        {
+            get
+            {
+                return digitBtnPressCommand ??
+                    (digitBtnPressCommand = new CalculatorCommand(obj =>
+                    {
+                        string number = obj as string;
+                        Phones[0].Result = number;
+                    }));
+            }
+        }
+
         public CalculatorViewModel()
         {
             CalculatorVar = new CalculatorModel();
@@ -39,10 +55,7 @@ namespace Calculator.ViewModels
 
             Phones = new ObservableCollection<CalculatorModel>
             {
-                new CalculatorModel { FirstOperand="2",SecondOperand="+",Operation="1",Result="lel" },
-                new CalculatorModel {FirstOperand="2",SecondOperand="+",Operation="1",Result="" },
-                new CalculatorModel {FirstOperand="2",SecondOperand="+",Operation="1",Result="" },
-                new CalculatorModel {FirstOperand="2",SecondOperand="+",Operation="1",Result="" }
+                new CalculatorModel { FirstOperand="2",SecondOperand="+",Operation="1",Result="lel" }
             };
         }
 

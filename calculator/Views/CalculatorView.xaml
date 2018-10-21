@@ -35,6 +35,11 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Name="Button7" Command="{Binding PlusCommand}" Grid.Column="0" Grid.Row="2">7</Button>
+        
+        <StackPanel >
+            <Button Name="Button8" Command="{Binding DigitBtnPressCommand}" CommandParameter="8" Grid.Column="2" Grid.Row="2">8</Button>
+            <TextBox Height="60" Width="60" Text="{Binding Path=Result }" ></TextBox>
+        </StackPanel>
 
 
     </Grid>
