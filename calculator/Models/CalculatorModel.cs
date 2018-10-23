@@ -14,7 +14,14 @@ namespace Calculator.Models
         private string secondOperand;
         private string operation;
         private string result;
-
+         
+        public CalculatorModel()
+        {
+            firstOperand = string.Empty;
+            secondOperand = string.Empty;
+            operation = string.Empty;
+            result = string.Empty;
+        }
         public string FirstOperand
         {
             get { return firstOperand; }
@@ -50,6 +57,37 @@ namespace Calculator.Models
                 result = value;
                 OnPropertyChanged("Result");
             }
+        }
+        public void Calculation(string FirstOperand,string Operation, string SecondOperand)
+        {
+            double res = 0.0;
+            switch (Operation)
+            {
+                case "+":
+                    res = double.Parse(FirstOperand) + double.Parse(SecondOperand);
+                    Result = res.ToString();
+                    break;
+                case "-":
+                    res = double.Parse(FirstOperand) - double.Parse(SecondOperand);
+                    Result = res.ToString();
+                    break;
+                case "*":
+                    res = double.Parse(FirstOperand) * double.Parse(SecondOperand);
+                    Result = res.ToString();
+                    break;
+                case "/":
+                    if (SecondOperand != "0")
+                    {
+                        res = double.Parse(FirstOperand) / double.Parse(SecondOperand);
+                        Result = res.ToString();
+                    }
+                    else
+                    {
+                        Result = "Деление на ноль";
+                    }
+                    break;
+            }
+            
         }
 
         public void OnPropertyChanged([CallerMemberName]string prop = "")

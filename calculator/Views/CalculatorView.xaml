@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator.Views"
         mc:Ignorable="d"
-        Title="CalculatorView" Height="350" Width="525">
+        Title="CalculatorView" Height="350" Width="225">
     <Window.Resources>
         
     <Style TargetType="TextBlock">
@@ -31,10 +31,10 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        
-        
-        <TextBox IsReadOnly="True" TextAlignment="Right" Name="Display" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding Path=Display }" ></TextBox>
 
+        <TextBox IsReadOnly="True" VerticalAlignment="Bottom" TextAlignment="Right" Name="FullExpression" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Text="{Binding Path=FullExpression }" ></TextBox>
+        <TextBox IsReadOnly="True" VerticalAlignment="Bottom" TextAlignment="Right" Name="Display" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding Path=Display }" ></TextBox>
+       
         <Button Name="Button7" Grid.Row="3" Grid.Column="0" Command="{Binding DigitBtnPressCommand}" CommandParameter="7">7</Button>
         <Button Name="Button8" Grid.Row="3" Grid.Column="1" Command="{Binding DigitBtnPressCommand}" CommandParameter="8">8</Button>
         <Button Name="Button9" Grid.Row="3" Grid.Column="2" Command="{Binding DigitBtnPressCommand}" CommandParameter="9">9</Button>
@@ -46,8 +46,13 @@
         <Button Name="Button1" Grid.Row="5" Grid.Column="0" Command="{Binding DigitBtnPressCommand}" CommandParameter="1">1</Button>
         <Button Name="Button2" Grid.Row="5" Grid.Column="1" Command="{Binding DigitBtnPressCommand}" CommandParameter="2">2</Button>
         <Button Name="Button3" Grid.Row="5" Grid.Column="2" Command="{Binding DigitBtnPressCommand}" CommandParameter="3">3</Button>
-
         <Button Name="Button0" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding DigitBtnPressCommand}" CommandParameter="0">0</Button>
+        
+        <Button Name="ButtonPlus" Grid.Row="6" Grid.Column="3" Command="{Binding OperationBtnPressCommand}" CommandParameter="+">+</Button>
+        <Button Name="ButtonMinus" Grid.Row="5" Grid.Column="3" Command="{Binding OperationBtnPressCommand}" CommandParameter="-">-</Button>
+        <Button Name="ButtonMultiply" Grid.Row="4" Grid.Column="3" Command="{Binding OperationBtnPressCommand}" CommandParameter="*">*</Button>
+        <Button Name="ButtonDivision" Grid.Row="3" Grid.Column="3" Command="{Binding OperationBtnPressCommand}" CommandParameter="/">/</Button>
+        <Button Name="ButtonEqual" Grid.Row="5" Grid.Column="4" Grid.RowSpan="2" Command="{Binding OperationBtnPressCommand}" CommandParameter="=">=</Button>
     </Grid>
    
 
