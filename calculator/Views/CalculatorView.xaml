@@ -34,7 +34,13 @@
 
         <TextBox IsReadOnly="True" VerticalAlignment="Bottom" TextAlignment="Right" Name="FullExpression" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Text="{Binding Path=FullExpression }" ></TextBox>
         <TextBox IsReadOnly="True" VerticalAlignment="Bottom" TextAlignment="Right" Name="Display" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding Path=Display }" ></TextBox>
-       
+
+        <Button Name="ButtonAllClear" Grid.Row="2" Grid.Column="2" Command="{Binding DigitBtnPressCommand}" CommandParameter="C">C</Button>
+        <Button Name="ButtonPlusMinus" Grid.Row="2" Grid.Column="3" Command="{Binding DigitBtnPressCommand}" CommandParameter="+/-">+/-</Button>
+        <Button Name="ButtonClear" Grid.Row="2" Grid.Column="1" Command="{Binding DigitBtnPressCommand}" CommandParameter="CE">CE</Button>
+        <Button Name="ButtonDel" Grid.Row="2" Grid.Column="0" Command="{Binding DigitBtnPressCommand}" CommandParameter="Del">Del</Button>
+        <Button Name="ButtonPoint" Grid.Row="6" Grid.Column="2" Command="{Binding DigitBtnPressCommand}" CommandParameter=",">,</Button>
+        
         <Button Name="Button7" Grid.Row="3" Grid.Column="0" Command="{Binding DigitBtnPressCommand}" CommandParameter="7">7</Button>
         <Button Name="Button8" Grid.Row="3" Grid.Column="1" Command="{Binding DigitBtnPressCommand}" CommandParameter="8">8</Button>
         <Button Name="Button9" Grid.Row="3" Grid.Column="2" Command="{Binding DigitBtnPressCommand}" CommandParameter="9">9</Button>

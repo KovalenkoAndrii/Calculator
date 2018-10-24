@@ -42,6 +42,47 @@ namespace Calculator.ViewModels
         {
             switch (valueButton)
             {
+                case "C":
+                    Display = "0";
+                    vmCalculation.FirstOperand = string.Empty;
+                    vmCalculation.SecondOperand = string.Empty;
+                    vmCalculation.Operation = string.Empty;
+                    LastOperation = string.Empty;
+                    FullExpression = string.Empty;
+                    break;
+                case "CE":
+                    Display = "0";
+                    break;
+                case "Del":
+                    if (display.Length > 1)
+                    {
+                        Display = display.Substring(0, display.Length - 1);
+                    }
+                    else
+                    {
+                        Display = "0";
+                    }
+                    break;
+                case ",":
+                    if (newDisplayRequired)
+                    {
+                        Display = "0,";
+                    }
+                    else
+                    {
+                        if (!display.Contains(","))
+                        {
+                            Display = display + ",";
+                        }
+                    }
+                    break;
+                case "+/-":
+                    if (display.Contains("-") || display == "0")
+                    {
+                        Display = display.Remove(display.IndexOf("-"), 1);
+                    }
+                    else Display = "-" + display;
+                    break;
                 default:
                     if (display == "0" || newDisplayRequired)
                         Display = valueButton;
